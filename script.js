@@ -2,53 +2,66 @@ const products = [
   { title: "Ribbon Ring", 
     price: "$99.99", 
     image: "https://images.unsplash.com/photo-1770721478216-3e5dbbe8dcc2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
-    imageHover: "https://images.unsplash.com/photo-1611955117173-b248ebfa2838?...",
-    stars: "4.5" },
+    imageHover: "https://images.unsplash.com/photo-1750891892189-cae53172de09?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    stars: "4.5",
+    isBestSeller: true },
   { title: "Westminster Frame",
     price: "$62", 
     image: "https://images.unsplash.com/photo-1771551962347-532f35d630ff?q=80&w=697&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
-    imageHover: "https://images.unsplash.com/photo-1611955117173-b248ebfa2838?...",
-    stars: "3.2" }, 
+    imageHover: "https://images.unsplash.com/photo-1565706359762-e9c05485fd88?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    stars: "3.2",
+    discount: "Save 15%",
+    isBestSeller: true }, 
   { title: "Gift Card", 
     price: "$100", 
     image: "https://plus.unsplash.com/premium_photo-1772065874102-2cfc09013300?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
-    imageHover: "https://images.unsplash.com/photo-1611955117173-b248ebfa2838?...",
-    stars: "4" },
+    imageHover: "https://plus.unsplash.com/premium_photo-1728670182314-a8aefbb9d53c?q=80&w=1647&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    stars: "4",
+    discount: "Save 15%",
+    isBestSeller: true  },
   { title: "Red Jacket", 
     price: "$79.99", 
     image: "https://plus.unsplash.com/premium_photo-1675186049366-64a655f8f537?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
-    imageHover: "https://images.unsplash.com/photo-1611955117173-b248ebfa2838?...",
-    stars: "4" },
+    imageHover: "https://images.unsplash.com/photo-1742151103941-d35daa354609?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cmVkJTIwamFja2V0fGVufDB8fDB8fHww",
+    stars: "4",
+    discount: "Save 15%",
+    isBestSeller: true  },
   { title: "Blue T Shirt",
     price: "$19.99", 
     image: "https://images.unsplash.com/photo-1564584217132-2271feaeb3c5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
-    imageHover: "https://images.unsplash.com/photo-1611955117173-b248ebfa2838?...",
-    stars: "5" },
+    imageHover: "https://plus.unsplash.com/premium_photo-1770559428079-ac7bfb8eea78?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    stars: "5",
+    isBestSeller: true  },
   { title: "Pink Sweater", 
     price: "$50", 
     image: "https://images.unsplash.com/photo-1520591799316-6b30425429aa?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
-    imageHover: "https://images.unsplash.com/photo-1611955117173-b248ebfa2838?...",
-    stars: "4.3" },
+    imageHover: "https://plus.unsplash.com/premium_photo-1715876268791-c5a3a00ed45b?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    stars: "4.3",
+    isBestSeller: true  },
   { title: "Jeans Dress", 
     price: "$80", 
     image: "https://images.unsplash.com/photo-1591369822096-ffd140ec948f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
-    imageHover: "https://images.unsplash.com/photo-1611955117173-b248ebfa2838?...",
-    stars: "4.7" },
+    imageHover: "https://plus.unsplash.com/premium_photo-1675877946243-bc3f83e65afe?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    stars: "4.7",
+    isBestSeller: true  },
   { title: "Hamburger", 
     price: "$5.99", 
     image: "https://plus.unsplash.com/premium_photo-1675252369719-dd52bc69c3df?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
-    imageHover: "https://images.unsplash.com/photo-1611955117173-b248ebfa2838?...",
-    stars: "3.8" },
+    imageHover: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=999&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    stars: "3.8",
+    isBestSeller: true  },
   { title: "Pizza", 
     price: "$14.99", 
     image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=781&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
-    imageHover: "https://images.unsplash.com/photo-1611955117173-b248ebfa2838?...",
-    stars: "2.5" },
+    imageHover: "https://images.unsplash.com/photo-1613564834361-9436948817d1?q=80&w=743&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    stars: "2.5",
+    isBestSeller: true  },
   { title: "BMW", 
     price: "$75.000", 
     image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
-    imageHover: "https://images.unsplash.com/photo-1611955117173-b248ebfa2838?...",
-    stars: "5" },
+    imageHover: "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?q=80&w=1215&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    stars: "5",
+    isBestSeller: true  },
 ]
 
 const carouselContainer = document.getElementById("carouselContainer");
@@ -58,7 +71,7 @@ const scrollIndicator = document.getElementById("scroll-indicator");
 function generateStars(rating) {
   let starsHtml = '';
   const totalStars = 5;
-  const numericRating = parseFloat(rating); // Aceita números como 4.5
+  const numericRating = parseFloat(rating);
 
   for (let i = 1; i <= totalStars; i++) {
     let fillPercentage = 0;
@@ -89,10 +102,41 @@ function generateStars(rating) {
 
 products.forEach(product => {
   const clone = template.content.cloneNode(true);
+  const cardContainer = clone.querySelector('div');
+  
+  cardContainer.className = "product-card flex-none w-[65%] md:w-[38%] lg:w-[21%] mr-6 group cursor-pointer";
 
-  const img = clone.querySelector("img");
-  img.src = product.image;
-  img.alt = product.title;
+  const imgContainer = document.createElement("div");
+  imgContainer.className = "relative w-full aspect-square mb-4 overflow-hidden rounded-[10px]";
+
+  const mainImg = clone.querySelector("img");
+  mainImg.src = product.image;
+  mainImg.alt = product.title;
+  mainImg.className = "w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0 relative z-10";
+
+  const hoverImg = document.createElement("img");
+  hoverImg.src = product.imageHover || product.image;
+  hoverImg.alt = `${product.title} - view 2`;
+  hoverImg.className = "absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100 z-0";
+
+  if (product.isBestSeller) {
+    const bestSellerTag = document.createElement("span");
+    bestSellerTag.textContent = "BEST SELLER";
+    bestSellerTag.className = "absolute top-2 left-2 z-20 bg-white border font-neue text-[10px] font-normal px-2 py-1 rounded-[100px] uppercase tracking-[0.06em]";
+    imgContainer.appendChild(bestSellerTag);
+  }
+
+  if (product.discount) {
+    const discountTag = document.createElement("span");
+    discountTag.textContent = product.discount;
+    discountTag.className = "absolute top-2 right-2 z-20 font-neue bg-tag-green border border-black text-neutral-white text-[10px] font-normal px-2 py-1 rounded-[100px] tracking-[0.06em]";
+    imgContainer.appendChild(discountTag);
+  }
+
+  imgContainer.appendChild(hoverImg);
+  imgContainer.appendChild(mainImg);
+
+  cardContainer.prepend(imgContainer);
 
   clone.querySelector("p#product-title").textContent = product.title;
   clone.querySelector("p#product-price").textContent = product.price;
@@ -102,11 +146,13 @@ products.forEach(product => {
     starContainer.innerHTML = generateStars(product.stars);
   }
 
-  const cardContainer = clone.querySelector('div');
-  cardContainer.classList.add('product-card', 'flex-none');
+  carouselContainer.appendChild(clone);
+});
 
-  carouselContainer.appendChild(clone)
-})
+// Adiciona o espaçamento final após o loop
+const spacer = document.createElement("div");
+spacer.className = "flex-none w-32"; 
+carouselContainer.appendChild(spacer);
 
 const carousel = document.getElementById("carouselContainer");
 const indicator = document.getElementById("scroll-indicator");

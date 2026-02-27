@@ -32,10 +32,23 @@
     scroll-snap-align: start;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1090px) {
     .product-card {
-      flex: 0 0 calc((100% - 16px) / 1.5) !important;
-      min-width: calc((100% - 16px) / 1.5) !important;
+      flex: 0 0 calc((100% - 20px) / 3.5) !important;
+      min-width: calc((100% - 20px) / 3.5) !important;
+    }
+    .section-container{
+      padding-left: 60px;
+    }
+    .scroll-container{
+      padding-right: 60px;
+    }
+  }
+
+  @media (max-width: 825px) {
+    .product-card {
+      flex: 0 0 calc((100% - 20px) / 3) !important;
+      min-width: calc((100% - 20px) / 3) !important;
     }
   }
 
