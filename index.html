@@ -21,12 +21,18 @@
         </a>
       </div>
     </div>
-    <div id="carousel">
+    <div id="carousel" class="flex gap-6">
       <template id="card-template">
-        <div class="min-w-[250px] bg-neutral-white shadow-md rounded-xl p-4">
-          <img class="w-full h-48 object-cover rounded-lg mb-4" loading="lazy"/>
-          <h3 class="font-heading text-2xl uppercase"></h3>
-          <p class="font-body text-secondary"></p>
+        <div class="w-full max-w-88.75">
+          <img class="w-full object-cover aspect-square rounded-[10px] mb-4" loading="lazy"/>
+          <div class="px-3 flex flex-col gap-2 text-product-infos">
+            <p id="product-title" class="font-neue font-normal text-lg tracking-[0.03em] uppercase"></p>
+            <div class="flex gap-1">
+              <div class="flex items-center product-stars gap-[1.2px]"></div>
+              <p class="font-poppins font-normal text-xs text-product-review">1,234 Reviews</p>
+            </div>
+            <p id="product-price" class="font-poppins font-medium text-[16px] uppercase"></p> 
+          </div>
         </div>
       </template>
     </div>
