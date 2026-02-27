@@ -11,7 +11,7 @@ const products = [
   { title: "BMW", price: "$75.000", image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", stars: "5" },
 ]
 
-const carousel = document.getElementById("carousel")
+const carouselContainer = document.getElementById("carouselContainer")
 const template = document.getElementById("card-template")
 
 function generateStars(rating) {
@@ -59,5 +59,20 @@ products.forEach(product => {
     starContainer.innerHTML = generateStars(product.stars);
   }
 
-  carousel.appendChild(clone)
+  carouselContainer.appendChild(clone)
 })
+
+const carousel = document.getElementById("carouselContainer");
+const indicator = document.getElementById("scroll-indicator");
+
+carousel.addEventListener("scroll", () => {
+  const scrollLeft = carousel.scrollLeft;
+
+  const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+  
+  const scrollPercent = (scrollLeft / maxScroll) * 100;
+
+  const indicatorPosition = (scrollPercent / 100) * 75;
+
+  indicator.style.left = `${indicatorPosition}%`;
+});
