@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="src/output.css" rel="stylesheet">
+  <script src="script.js" defer></script>
+  <title>Platter Challenge</title>
+</head>
+<body>
+  <div class="container pl-32"> 
+    <div id="text" class="flex justify-between mt-20 mb-9 items-center">
+      <h2 class="font-serif py-0.5 text-neutral-black font-black text-[40px] tracking-[-0.01em] leading-[1.2]">Best Sellers</h2>  
+      <div>
+        <a href="#" class="flex items-center gap-2"> 
+          <p class="font-semibold font-poppins text-secondary text-sm leading-[1.4] tracking-[0.03em] ">Shop All Best Sellers</p>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="text-secondary">
+            <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div id="carousel">
+      <template id="card-template">
+        <div class="min-w-[250px] bg-neutral-white shadow-md rounded-xl p-4">
+          <img class="w-full h-48 object-cover rounded-lg mb-4" loading="lazy"/>
+          <h3 class="font-heading text-2xl uppercase"></h3>
+          <p class="font-body text-secondary"></p>
+        </div>
+      </template>
+    </div>
+    <div id="carousel-scroll"></div>
+  </div>
+</body>
+</html>

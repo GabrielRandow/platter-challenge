@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-neutral-black: #231F20;
+  --color-neutral-white: #FFFFFA;
+  --color-secondary: #5C553A;
+  --color-tag-green: #5C7962;
+  --color-product-infos: #1C1D1D;
+  --color-scroll-bar: #DDD6D7;
+
+  /* Fonts */
+  --font-poppins: "Poppins", sans-serif;
+  --font-neue: "Bebas Neue", sans-serif;
+}
