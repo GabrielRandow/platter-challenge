@@ -25,4 +25,39 @@
     -ms-overflow-style: none;
     scrollbar-width: none; 
   }
+
+  .product-card {
+    flex: 0 0 calc((100% - (24px * 4)) / 4.5) !important;
+    min-width: calc((100% - (24px * 4)) / 4.5) !important;
+    scroll-snap-align: start;
+  }
+
+  @media (max-width: 768px) {
+    .product-card {
+      flex: 0 0 calc((100% - 16px) / 1.5) !important;
+      min-width: calc((100% - 16px) / 1.5) !important;
+    }
+  }
+
+  #carouselContainer {
+    cursor: default;
+    user-select: auto;
+    -webkit-user-drag: auto; 
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+
+  #carousel-scroll {
+  transition: all 0.3s ease;
+}
+
+#scroll-indicator {
+  top: 50%;
+  transform: translateY(-50%);
+  will-change: height, left;
+}
+
+#carousel-scroll:hover {
+  height: 6px;
+}
 }

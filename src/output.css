@@ -194,24 +194,6 @@
   .left-0 {
     left: calc(var(--spacing) * 0);
   }
-  .container {
-    width: 100%;
-    @media (width >= 40rem) {
-      max-width: 40rem;
-    }
-    @media (width >= 48rem) {
-      max-width: 48rem;
-    }
-    @media (width >= 64rem) {
-      max-width: 64rem;
-    }
-    @media (width >= 80rem) {
-      max-width: 80rem;
-    }
-    @media (width >= 96rem) {
-      max-width: 96rem;
-    }
-  }
   .mt-13 {
     margin-top: calc(var(--spacing) * 13);
   }
@@ -251,6 +233,15 @@
   .max-w-88\.75 {
     max-width: calc(var(--spacing) * 88.75);
   }
+  .flex-none {
+    flex: none;
+  }
+  .snap-x {
+    scroll-snap-type: x var(--tw-scroll-snap-strictness);
+  }
+  .snap-mandatory {
+    --tw-scroll-snap-strictness: mandatory;
+  }
   .flex-col {
     flex-direction: column;
   }
@@ -275,6 +266,9 @@
   .overflow-hidden {
     overflow: hidden;
   }
+  .overflow-x-auto {
+    overflow-x: auto;
+  }
   .rounded-\[10px\] {
     border-radius: 10px;
   }
@@ -295,6 +289,9 @@
   }
   .py-0\.5 {
     padding-block: calc(var(--spacing) * 0.5);
+  }
+  .pr-32 {
+    padding-right: calc(var(--spacing) * 32);
   }
   .pl-32 {
     padding-left: calc(var(--spacing) * 32);
@@ -391,6 +388,40 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+  .product-card {
+    flex: 0 0 calc((100% - (24px * 4)) / 4.5) !important;
+    min-width: calc((100% - (24px * 4)) / 4.5) !important;
+    scroll-snap-align: start;
+  }
+  @media (max-width: 768px) {
+    .product-card {
+      flex: 0 0 calc((100% - 16px) / 1.5) !important;
+      min-width: calc((100% - 16px) / 1.5) !important;
+    }
+  }
+  #carouselContainer {
+    cursor: default;
+    user-select: auto;
+    -webkit-user-drag: auto;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+  #carousel-scroll {
+    transition: all 0.3s ease;
+  }
+  #scroll-indicator {
+    top: 50%;
+    transform: translateY(-50%);
+    will-change: height, left;
+  }
+  #carousel-scroll:hover {
+    height: 6px;
+  }
+}
+@property --tw-scroll-snap-strictness {
+  syntax: "*";
+  inherits: false;
+  initial-value: proximity;
 }
 @property --tw-leading {
   syntax: "*";
@@ -411,6 +442,7 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-scroll-snap-strictness: proximity;
       --tw-leading: initial;
       --tw-font-weight: initial;
       --tw-tracking: initial;
