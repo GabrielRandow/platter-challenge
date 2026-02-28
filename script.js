@@ -5,7 +5,7 @@ const products = [
     imageHover: "https://images.unsplash.com/photo-1750891892189-cae53172de09?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     stars: "4.5",
     isBestSeller: true },
-  { title: "Westminster Frame",
+  { title: "Frame",
     price: "$62", 
     image: "https://images.unsplash.com/photo-1771551962347-532f35d630ff?q=80&w=697&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
     imageHover: "https://images.unsplash.com/photo-1565706359762-e9c05485fd88?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -100,11 +100,11 @@ function generateStars(rating) {
   return starsHtml;
 }
 
-products.forEach(product => {
+products.forEach((product, index) => {
   const clone = template.content.cloneNode(true);
   const cardContainer = clone.querySelector('div');
   
-  cardContainer.className = "product-card flex-none w-[65%] md:w-[38%] lg:w-[21%] mr-6 group cursor-pointer";
+  cardContainer.className = "product-card flex-none w-full lg:w-[21%] md:mr-6 group cursor-pointer";
 
   const imgContainer = document.createElement("div");
   imgContainer.className = "relative w-full aspect-square mb-4 overflow-hidden rounded-[10px]";
@@ -146,13 +146,16 @@ products.forEach(product => {
     starContainer.innerHTML = generateStars(product.stars);
   }
 
+  // Classes base que nunca mudam
+  const baseClasses = "product-card flex-none w-full md:w-[21%] md:mr-6 group cursor-pointer transition-[opacity,max-height] ease-in-out duration-500";
+
+  if (index > 3) {
+    cardContainer.className = `${baseClasses} hidden-product opacity-0 max-h-0 overflow-hidden pointer-events-none md:opacity-100 md:max-h-none md:overflow-visible md:pointer-events-auto`;
+  } else {
+    cardContainer.className = `${baseClasses} opacity-100 max-h-none`;
+  }
   carouselContainer.appendChild(clone);
 });
-
-// Adiciona o espaçamento final após o loop
-const spacer = document.createElement("div");
-spacer.className = "flex-none w-32"; 
-carouselContainer.appendChild(spacer);
 
 const carousel = document.getElementById("carouselContainer");
 const indicator = document.getElementById("scroll-indicator");
@@ -199,3 +202,15 @@ function moveCarouselByBar(e) {
     behavior: "auto" 
   });
 }
+
+showMoreBtn.addEventListener('click', () => {
+  const hiddenProducts = document.querySelectorAll('.hidden-product');
+  hiddenProducts.forEach(product => {
+    product.classList.remove('opacity-0', 'max-h-0', 'pointer-events-none');
+    product.style.maxHeight = "1000px"; 
+    product.style.opacity = "1";
+    product.style.pointerEvents = "auto";
+  });
+
+  showMoreBtn.parentElement.classList.add('hidden');
+});
