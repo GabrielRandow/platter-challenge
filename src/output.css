@@ -581,9 +581,9 @@
       padding-right: calc(var(--spacing) * 0);
     }
   }
-  .md\:pr-32 {
+  .md\:pr-15 {
     @media (width >= 48rem) {
-      padding-right: calc(var(--spacing) * 32);
+      padding-right: calc(var(--spacing) * 15);
     }
   }
   .md\:pl-15 {
@@ -616,6 +616,11 @@
   .lg\:w-\[21\%\] {
     @media (width >= 64rem) {
       width: 21%;
+    }
+  }
+  .lg\:pr-32 {
+    @media (width >= 64rem) {
+      padding-right: calc(var(--spacing) * 32);
     }
   }
   .lg\:pl-32 {
