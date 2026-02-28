@@ -1,3 +1,4 @@
+// --- Product Database ---
 const products = [
   { title: "Ribbon Ring", 
     price: "$99.99", 
@@ -68,6 +69,7 @@ const carouselContainer = document.getElementById("carouselContainer");
 const template = document.getElementById("card-template");
 const scrollIndicator = document.getElementById("scroll-indicator");
 
+// Creates the star rating system using SVGs
 function generateStars(rating) {
   let starsHtml = '';
   const totalStars = 5;
@@ -84,6 +86,7 @@ function generateStars(rating) {
       fillPercentage = 0;
     }
 
+    // Unique ID for each gradient so they don't overwrite each other
     const gradientId = `grad-${Math.random().toString(5)}`;
 
     starsHtml += `
@@ -100,12 +103,14 @@ function generateStars(rating) {
   return starsHtml;
 }
 
+// --- Card Rendering Loop ---
 products.forEach((product, index) => {
   const clone = template.content.cloneNode(true);
   const cardContainer = clone.querySelector('div');
   
   cardContainer.className = "product-card flex-none w-full lg:w-[21%] md:mr-6 group cursor-pointer";
 
+  //create a secondary image for the "hover" effect
   const imgContainer = document.createElement("div");
   imgContainer.className = "relative w-full aspect-square mb-4 overflow-hidden rounded-[10px]";
 
@@ -119,6 +124,7 @@ products.forEach((product, index) => {
   hoverImg.alt = `${product.title} - view 2`;
   hoverImg.className = "absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100 z-0";
 
+  // Badges: only show "Best Seller" or "Discount" if they actually exist in the data
   if (product.isBestSeller) {
     const bestSellerTag = document.createElement("span");
     bestSellerTag.textContent = "BEST SELLER";
@@ -135,7 +141,6 @@ products.forEach((product, index) => {
 
   imgContainer.appendChild(hoverImg);
   imgContainer.appendChild(mainImg);
-
   cardContainer.prepend(imgContainer);
 
   clone.querySelector("p#product-title").textContent = product.title;
@@ -146,7 +151,7 @@ products.forEach((product, index) => {
     starContainer.innerHTML = generateStars(product.stars);
   }
 
-  // Classes base que nunca mudam
+  // --- Responsive Visibility Logic ---
   const baseClasses = "product-card flex-none w-full md:w-[21%] md:mr-6 group cursor-pointer transition-[opacity,max-height] ease-in-out duration-500";
 
   if (index > 3) {
@@ -160,6 +165,7 @@ products.forEach((product, index) => {
 const carousel = document.getElementById("carouselContainer");
 const indicator = document.getElementById("scroll-indicator");
 
+// --- Scroll & Interaction ---
 carouselContainer.addEventListener("scroll", () => {
   window.requestAnimationFrame(() => {
     const scrollLeft = carouselContainer.scrollLeft;
@@ -203,6 +209,7 @@ function moveCarouselByBar(e) {
   });
 }
 
+//Show More" Button Logic (Mobile Only)
 showMoreBtn.addEventListener('click', () => {
   const hiddenProducts = document.querySelectorAll('.hidden-product');
   hiddenProducts.forEach(product => {
@@ -211,6 +218,7 @@ showMoreBtn.addEventListener('click', () => {
     product.style.opacity = "1";
     product.style.pointerEvents = "auto";
   });
-
+  
+  // Remove the button after use to clean up the UI
   showMoreBtn.parentElement.classList.add('hidden');
 });
